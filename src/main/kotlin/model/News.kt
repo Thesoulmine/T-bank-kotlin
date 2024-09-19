@@ -7,7 +7,7 @@ data class News(
     var id: Long,
     var publicationDate: LocalDate,
     var title: String,
-    var place: String,
+    var place: Place?,
     var description: String,
     var siteUrl: String,
     var favoritesCount: Int,

@@ -21,7 +21,7 @@ class NewsServiceImpl : NewsService {
 
         FileWriter(path).use { writer ->
             CSVFormat.DEFAULT.print(writer).apply {
-                printRecord("Id", "Pubication date", "Title", "Place", "Description", "Site url", "Favorites count", "Comments count", "Rating")
+                printRecord("Id", "Publication date", "Title", "Place", "Description", "Site url", "Favorites count", "Comments count", "Rating")
                 news.forEach { news ->
                     printRecord(
                         news.id,

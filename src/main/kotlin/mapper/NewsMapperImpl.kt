@@ -2,6 +2,7 @@ package org.example.mapper
 
 import org.example.dto.NewsDTO
 import org.example.model.News
+import org.example.model.Place
 import java.time.Instant
 import java.time.ZoneId
 
@@ -12,7 +13,7 @@ class NewsMapperImpl : NewsMapper {
             newsDTO.id,
             Instant.ofEpochSecond(newsDTO.publicationDate).atZone(ZoneId.systemDefault()).toLocalDate(),
             newsDTO.title,
-            newsDTO.place.toString(),
+            newsDTO.place?.let { Place(it.id) },
             newsDTO.description,
             newsDTO.siteUrl,
             newsDTO.favoritesCount,
