@@ -22,6 +22,6 @@ class NewsMapperImpl : NewsMapper {
     }
 
     override fun fromDTO(newsDTOList: List<NewsDTO>): List<News> {
-        return newsDTOList.map { newsDTO -> fromDTO(newsDTO) }
+        return newsDTOList.map { fromDTO(it) }
     }
 }
