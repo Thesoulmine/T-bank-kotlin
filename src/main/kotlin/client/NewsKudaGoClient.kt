@@ -10,7 +10,6 @@ import kotlinx.serialization.json.Json
 import org.example.dto.NewsKudaGoResponseDTO
 import org.example.mapper.NewsMapper
 import org.example.model.News
-import java.util.ArrayList
 
 class NewsKudaGoClient constructor(
     private val newsMapper: NewsMapper
@@ -25,7 +24,7 @@ class NewsKudaGoClient constructor(
     }
 
     override suspend fun getNews(count: Int): List<News> {
-        val newsList = ArrayList<News>()
+        val newsList = mutableListOf<News>()
         var page = 1
 
         while (newsList.size < count) {
