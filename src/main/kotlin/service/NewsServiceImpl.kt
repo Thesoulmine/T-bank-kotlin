@@ -1,12 +1,19 @@
 package org.example.service
 
 import org.apache.commons.csv.CSVFormat
+import org.example.client.NewsClient
 import org.example.model.News
 import java.io.FileWriter
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class NewsServiceImpl : NewsService {
+class NewsServiceImpl constructor(
+    private val newsClient: NewsClient
+) : NewsService {
+
+    override fun getNews(count: Int) {
+
+    }
 
     override fun saveNews(path: String, news: Collection<News>) {
         val filePath = Paths.get(path)
